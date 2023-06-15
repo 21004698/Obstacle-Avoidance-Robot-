@@ -36,10 +36,116 @@ The IR sensors are used for obstacle detection. The sensor output signal sends t
 
 
 ## PROGRAM:
+const int fs = 0; 
+const int rs = 1;
+const int ls = 2;
+int switchfs = 0;
+int switchrs = 0;
+int switchls = 0;
+int br2 = 6;
+int br1 = 7;
+int bl2 = 8;
+int bl1 = 9;
+int fr2 = 10;
+int fr1 = 11;
+int fl2 = 12;
+int fl1 = 13;
+void setup() 
+{
+  pinMode(fs,INPUT); 
+  pinMode(ls,INPUT);
+  pinMode(rs,INPUT);
+  pinMode(fl1,OUTPUT);
+  pinMode(fl2,OUTPUT);
+  pinMode(fr1,OUTPUT);
+  pinMode(fr2,OUTPUT);
+  pinMode(bl1,OUTPUT);
+  pinMode(bl2,OUTPUT);
+  pinMode(br1,OUTPUT);
+  pinMode(br2,OUTPUT);
+  }
+void loop() 
+{
+  switchfs = digitalRead(fs);
+    switchls = digitalRead(ls);
+      switchrs = digitalRead(rs);
+
+    if (switchfs==0 && switchrs==0&& switchls==0) 
+    {
+  digitalWrite(fl1,HIGH);
+  digitalWrite(fl2,LOW);
+  digitalWrite(fr1,HIGH);
+  digitalWrite(fr2,LOW);
+  digitalWrite(bl1,HIGH);
+  digitalWrite(bl2,LOW);
+  digitalWrite(br1,HIGH);
+  digitalWrite(br2,LOW);
+    }
+   
+    else  if (switchfs==1 && switchrs==0&& switchls==0) 
+{
+  digitalWrite(fl1,LOW);
+  digitalWrite(fl2,HIGH);
+  digitalWrite(fr1,HIGH);
+  digitalWrite(fr2,LOW);
+  digitalWrite(bl1,LOW);
+  digitalWrite(bl2,HIGH);
+  digitalWrite(br1,HIGH);
+  digitalWrite(br2,LOW);
+} 
+else  if (switchfs==1 && switchrs==0&& switchls==1) 
+{
+  digitalWrite(fl1,LOW);
+  digitalWrite(fl2,HIGH);
+  digitalWrite(fr1,HIGH);
+  digitalWrite(fr2,LOW);
+  digitalWrite(bl1,LOW);
+  digitalWrite(bl2,HIGH);
+  digitalWrite(br1,HIGH);
+  digitalWrite(br2,LOW);
+}
+
+else  if (switchfs==1 && switchrs==1&& switchls==0) 
+{
+  digitalWrite(fl1,HIGH);
+  digitalWrite(fl2,LOW);
+  digitalWrite(fr1,LOW);
+  digitalWrite(fr2,HIGH);
+  digitalWrite(bl1,HIGH);
+  digitalWrite(bl2,LOW);
+  digitalWrite(br1,LOW);
+  digitalWrite(br2,HIGH);
+}
+
+ else  if (switchfs==1 && switchrs==1&& switchls==1) 
+{
+  digitalWrite(fl1,LOW);
+  digitalWrite(fl2,HIGH);
+  digitalWrite(fr1,LOW);
+  digitalWrite(fr2,HIGH);
+  digitalWrite(bl1,LOW);
+  digitalWrite(bl2,HIGH);
+  digitalWrite(br1,LOW);
+  digitalWrite(br2,HIGH);
+}
+
+}
 
 ## CIRCUIT DIAGRAM:
+![image](https://github.com/21004698/Obstacle-Avoidance-Robot-/assets/113590268/6e18e1f4-2e05-4ced-b3dc-c448ae9d9816)
 
 ## OUTPUT:
+![image](https://github.com/21004698/Obstacle-Avoidance-Robot-/assets/113590268/878e26f4-eee9-41eb-b0aa-52304ce148fa)
+
+
+![image](https://github.com/21004698/Obstacle-Avoidance-Robot-/assets/113590268/6b7194b6-b31a-4568-bf5d-657ebc3fd22a)
+
+
+![image](https://github.com/21004698/Obstacle-Avoidance-Robot-/assets/113590268/1003e7ea-5c2b-44c4-8519-1f65ee85de0a)
+
+
+
+
 
 ## RESULT:
 Thus the Obstacle Avoidance Robot was designed and simulated using Proteus software.
